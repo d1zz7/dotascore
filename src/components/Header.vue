@@ -49,17 +49,15 @@ export default {
   }
   .header-items {
     margin: 0;
-    padding: 4px;
     width: 50%;
     li {
       display: inline;
-      margin-right: 50px;
       padding: 3px;
       cursor: pointer;
       color: #3b6eef;
       font-family: Consolas, sans-serif;
       transition: all 0.3s ease;
-
+      margin-left: 30px;
       a {
         text-decoration: none;
         color: #3b6eef;
@@ -71,9 +69,11 @@ export default {
     }
   }
   .sign-in {
-    width: 6%;
-    padding-right: 10px;
+    width: 25%;
+    text-align: right;
+    margin: 0;
     a {
+      margin: 0;
       text-decoration: none;
       color: #3b6eef;
       cursor: pointer;
@@ -83,6 +83,18 @@ export default {
 
 @media only screen and (max-width: 860px) {
   .header {
+    height: 30px;
+    .header-items {
+      display: none;
+    }
+    .logo {
+      max-width: 40%;
+      height: 100%;
+    }
+    .sign-in {
+      width: 50%;
+      margin: 0;
+    }
   }
 }
 </style>
