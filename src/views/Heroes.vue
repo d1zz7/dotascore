@@ -1,13 +1,9 @@
-<template>
-$END$
-</template>
+<template></template>
 
 <script>
 export default {
-name: "Heroes"
-}
+  name: `Heroes`,
+};
 </script>
 
-<style scoped>
-
-</style>
+<style lang="scss" scoped></style>
