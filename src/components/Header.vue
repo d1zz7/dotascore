@@ -25,16 +25,15 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@use '@/assets/style/main.scss' as m;
+
 .header {
   max-width: 100%;
   height: 40px;
   padding: 10px 20px 10px 0;
   margin: 0 auto;
   background: #1A2026;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
+  @include m.flex-r-sb;
   -webkit-box-shadow: 0px 4px 8px -9px rgba(34, 60, 80, 1);
   -moz-box-shadow: 0px 4px 8px -9px rgba(34, 60, 80, 1);
   box-shadow: 0px 4px 8px -9px rgba(34, 60, 80, 1);

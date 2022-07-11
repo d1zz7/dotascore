@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-
+    <h1>Главная</h1>
   </div>
 </template>
 
@@ -10,4 +10,6 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+
+</style>

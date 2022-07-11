@@ -1,2 +1,2 @@
-### cybersport
+### dotascore
 фронтенд на ~~хуйне~~ вью

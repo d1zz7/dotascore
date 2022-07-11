@@ -14,7 +14,25 @@
 
 <script>
 export default {
-  name: `Match`
+  name: `Match`,
+  props: {
+    match: {
+      type: Object,
+      required: true,
+      begin_at: String,
+      name: String,
+      opponents: {
+        type: Array,
+        required: true,
+        opponent: {
+          type: Object,
+          required: true,
+          name: String,
+          image_url: String
+        }
+      }
+    }
+  }
 }
 </script>
 
