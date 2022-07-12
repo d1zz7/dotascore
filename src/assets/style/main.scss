@@ -8,7 +8,7 @@ body {
   text-align: center;
   font-family: Consolas, sans-serif;
   background: #2F3640;
-  color: #3b6eef;
+  color: #628df3;
 }
 
 * {
@@ -25,6 +25,12 @@ body {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+}
+@mixin flex-r-c {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
 }
 @mixin flex-r-sb {
   display: flex;
@@ -49,4 +55,10 @@ body {
   align-items: center;
   justify-content: flex-start;
   flex-direction: column;
+}
+@mixin flex-r-fe {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
 }

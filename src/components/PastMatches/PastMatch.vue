@@ -1,10 +1,16 @@
 <template>
-  <div class="match">
+  <div class="past-match">
     <div class="info">
-      {{ beginAt }}
+      {{ endAt }}
     </div>
     <div class="teams">
-      <div class="left-t">
+      <div
+        :class="[
+          match.opponents[0].opponent.id === match.winner_id
+            ? 'left-t winner'
+            : 'left-t',
+        ]"
+      >
         {{ match.opponents[0].opponent.name }}
         <img
           class="team-image"
@@ -12,8 +18,13 @@
           alt=""
         />
       </div>
-      <h5>vs</h5>
-      <div class="right-t">
+      <div
+        :class="[
+          match.opponents[1].opponent.id === match.winner_id
+            ? 'right-t winner'
+            : 'right-t',
+        ]"
+      >
         <img
           class="team-image"
           :src="match.opponents[1].opponent.image_url"
@@ -22,31 +33,33 @@
         {{ match.opponents[1].opponent.name }}
       </div>
     </div>
-    <div class="description">
-      <img
-        class="league-image"
-        :src="match.league.image_url"
-        :alt="match.league.name"
-      />
-      {{ match.league.name }}
-    </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: `Match`,
+  name: `PastMatch`,
   props: {
     match: {
       type: Object,
       required: true,
-      begin_at: String,
+      end_at: String,
       name: String,
       league: {
         type: Object,
         required: false,
         name: String,
         image_url: String,
+      },
+      winner: {
+        Type: Object,
+        required: true,
+        image_url: String,
+        name: String,
+      },
+      winner_id: {
+        type: Number,
+        required: true,
       },
       opponents: {
         type: Array,
@@ -61,7 +74,7 @@ export default {
     },
   },
   computed: {
-    beginAt() {
+    endAt() {
       return this.match.begin_at.substring(0, 10);
     },
   },
@@ -71,33 +84,28 @@ export default {
 <style lang="scss" scoped>
 @use '@/assets/style/main.scss' as m;
 
-.match {
-  width: 100%;
-  height: 60px;
-  border-radius: 10px;
-  margin: 0;
+.past-match {
   @include m.flex-r-sb;
-  transition: all 0.3s ease;
+  width: 100%;
+  height: 40px;
+  margin-top: 20px;
   cursor: pointer;
-  padding: 5px;
+  transition: all 0.3s ease;
 
   .info {
-    height: 40%;
-    width: 20%;
-    @include m.flex-c;
-    color: #628df3;
-    padding: 1px;
-    border: 1px solid #628df3;
-    border-radius: 5px;
+    font-size: 0.7rem;
+    border: 0.5px solid #628df3;
+    border-radius: 1px;
+    padding: 0.5px;
+    width: 70px;
   }
   .teams {
-    width: 90%;
+    width: 350px;
+    max-width: 350px;
     height: 100%;
+    padding: 5px;
     @include m.flex-r-c;
-
-    h5 {
-      width: 2%;
-    }
+    color: #de3b55;
 
     .left-t {
       width: 40%;
@@ -113,13 +121,9 @@ export default {
       max-width: 40px;
       margin: 5px;
     }
-  }
-  .description {
-    min-width: 40%;
-    @include m.flex-r-fs;
-    .league-image {
-      max-width: 40px;
-      margin: 5px;
+
+    .winner {
+      color: #4be36b;
     }
   }
 

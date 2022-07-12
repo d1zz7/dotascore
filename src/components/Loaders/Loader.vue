@@ -8,7 +8,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .lds-dual-ring {
   display: inline-block;
   width: 80px;
@@ -21,8 +21,8 @@ export default {
   height: 64px;
   margin: 8px;
   border-radius: 50%;
-  border: 6px solid #3b58ea;
-  border-color: #3b58ea transparent #3b58ea transparent;
+  border: 6px solid #628df3;
+  border-color: #628df3 transparent #628df3 transparent;
   animation: lds-dual-ring 1.2s linear infinite;
 }
 @keyframes lds-dual-ring {

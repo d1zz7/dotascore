@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import Home from '@/views/Home';
 import Matches from '@/views/Matches';
+import MatchInfo from '@/views/MatchInfo';
 
 const routes = [
   {
@@ -12,6 +13,11 @@ const routes = [
     path: '/matches',
     name: 'Matches',
     component: Matches,
+  },
+  {
+    path: '/match:id',
+    name: 'Matches',
+    component: MatchInfo,
   }
 ];
 
