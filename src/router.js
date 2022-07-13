@@ -15,10 +15,10 @@ const routes = [
     component: Matches,
   },
   {
-    path: '/match:id',
-    name: 'Matches',
+    path: '/matches/:id',
+    name: 'MatchInfo',
     component: MatchInfo,
-  }
+  },
 ];
 
 const router = createRouter({

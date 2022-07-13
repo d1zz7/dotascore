@@ -86,11 +86,14 @@ export default {
 
 .past-match {
   @include m.flex-r-sb;
-  width: 100%;
+  max-width: 400px;
   height: 40px;
   margin-top: 20px;
   cursor: pointer;
   transition: all 0.3s ease;
+  padding: 5px;
+  border: 1px solid transparent;
+  border-radius: 10px;
 
   .info {
     font-size: 0.7rem;

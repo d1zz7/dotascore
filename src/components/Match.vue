@@ -26,21 +26,26 @@
       <img
         class="league-image"
         :src="match.league.image_url"
-        :alt="match.league.name"
+        alt=""
       />
-      {{ match.league.name }}
+      {{match.league.name}}
     </div>
   </div>
 </template>
 
 <script>
+import moment from 'moment';
+
 export default {
   name: `Match`,
   props: {
     match: {
       type: Object,
       required: true,
-      begin_at: String,
+      begin_at: {
+        type: String,
+        required: true,
+      },
       name: String,
       league: {
         type: Object,
@@ -62,7 +67,7 @@ export default {
   },
   computed: {
     beginAt() {
-      return this.match.begin_at.substring(0, 10);
+      return moment(this.match.begin_at).format('DD.MM hh:mm a');
     },
   },
 };
@@ -80,6 +85,7 @@ export default {
   transition: all 0.3s ease;
   cursor: pointer;
   padding: 5px;
+  border: 1px solid transparent;
 
   .info {
     height: 40%;
@@ -89,6 +95,7 @@ export default {
     padding: 1px;
     border: 1px solid #628df3;
     border-radius: 5px;
+    font-size: 0.7rem;
   }
   .teams {
     width: 90%;

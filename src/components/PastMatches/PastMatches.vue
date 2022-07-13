@@ -54,8 +54,8 @@ export default {
 .past-matches {
   @include m.flex-c-fs;
   position: absolute;
-  width: 420px;
-  height: 650px;
+  max-width: 420px;
+  height: 770px;
   right: 15px;
   top: 110px;
   padding: 5px;
